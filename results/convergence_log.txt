@@ -1,0 +1,8 @@
+IAE eps=1.0e-02  A-calls=      6627  RMS=2.57e-03  coverage=1.00  [1s]
+IAE eps=4.6e-03  A-calls=      6870  RMS=2.23e-03  coverage=1.00  [1s]
+IAE eps=2.2e-03  A-calls=     32420  RMS=5.81e-04  coverage=1.00  [4s]
+IAE eps=1.0e-03  A-calls=     34687  RMS=4.82e-04  coverage=1.00  [6s]
+IAE eps=4.6e-04  A-calls=    143390  RMS=1.44e-04  coverage=1.00  [16s]
+IAE eps=2.2e-04  A-calls=    174187  RMS=8.19e-05  coverage=1.00  [29s]
+IAE eps=1.0e-04  A-calls=    606317  RMS=3.38e-05  coverage=1.00  [76s]
+IAE eps=4.6e-05  A-calls=    855643  RMS=1.54e-05  coverage=1.00  [143s]

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+results/ibm_jobs.json
+
+# secrets: never commit
+.env
+*.env
+qiskit-ibm.json
+*apikey*
+*api_key*
+.DS_Store

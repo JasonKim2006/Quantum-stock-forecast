@@ -1,0 +1,6 @@
+Black-Scholes price         : 0.167131
+Circuit target (3 qubits)  : 0.165820
+Seeds per IAE point         : 5
+MC fitted slope             : -0.382  (theory -0.5)
+IAE fitted slope            : -1.418  (theory -1.0)
+Fitted-line crossover cost  : 6.42e+03 calls

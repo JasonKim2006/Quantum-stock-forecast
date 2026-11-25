@@ -1,0 +1,29 @@
+NVDA  as of 2026-11-25  [DEMO DATA (simulated)]
+  spot                 40.25
+  risk-free rate       4.00%
+  expiry          2027-01-24  (60 days)
+  historical vol       25.1%   (last 252 trading days)
+  implied vol          27.6%   (at-the-money, from option mid prices)
+  -> market expects MORE movement than the past year
+
+Forecast for 2027-01-24
+  [historical] 90% range    34.11 -    47.64   P(> 44.28) =  17.8%
+  [implied   ] 90% range    33.50 -    48.40   P(> 44.28) =  19.8%
+  [quantum IAE ] P(> 44.28) =  19.8%  (95% CI 19.6%-19.9%, circuit exact 19.8%, 10,800 calls to A)
+  [point grid  ] P(> 44.28) =  20.9%  (naive 32-point sampling, for comparison)
+
+Call prices, 5-qubit grid, IAE epsilon=0.005
+    strike   market   BS(IV)   BS(HV)  quantum            95% CI
+     37.00     4.08     4.00     3.89     4.00    [  3.96,  4.04]
+     38.00     3.33     3.27     3.14     3.24    [  3.20,  3.28]
+     39.00     2.65     2.62     2.47     2.60    [  2.57,  2.63]
+     40.00     2.06     2.05     1.89     2.04    [  2.00,  2.08]
+     41.00     1.56     1.58     1.41     1.57    [  1.55,  1.60]
+  market = bid/ask mid; BS(IV) differs from market away from the money because of the volatility smile
+
+Backtest: 41-trading-day forecasts from trailing 1y vol, 194 dates (~23 independent)
+   50% interval contained the outcome  60.3%   (calibrated range 30%-70%)  ok
+   80% interval contained the outcome  91.2%   (calibrated range 64%-96%)  ok
+   90% interval contained the outcome  94.3%   (calibrated range 78%-100%)  ok
+   95% interval contained the outcome  99.0%   (calibrated range 86%-100%)  ok
+  moves beyond 3 sigma: 0.00% (normal model: 0.27%)

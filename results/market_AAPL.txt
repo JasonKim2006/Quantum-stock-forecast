@@ -1,0 +1,29 @@
+AAPL  as of 2026-11-25  [DEMO DATA (simulated)]
+  spot                 28.22
+  risk-free rate       4.00%
+  expiry          2026-12-25  (30 days)
+  historical vol       33.3%   (last 252 trading days)
+  implied vol          36.7%   (at-the-money, from option mid prices)
+  -> market expects MORE movement than the past year
+
+Forecast for 2026-12-25
+  [historical] 90% range    24.09 -    32.98   P(> 29.63) =  30.0%
+  [implied   ] 90% range    23.68 -    33.48   P(> 29.63) =  31.4%
+  [quantum IAE ] P(> 29.63) =  31.4%  (95% CI 31.3%-31.5%, circuit exact 31.4%, 15,000 calls to A)
+  [point grid  ] P(> 29.63) =  33.0%  (naive 32-point sampling, for comparison)
+
+Call prices, 5-qubit grid, IAE epsilon=0.005
+    strike   market   BS(IV)   BS(HV)  quantum            95% CI
+     26.00     2.67     2.64     2.57     2.64    [  2.63,  2.65]
+     27.00     1.95     1.93     1.83     1.93    [  1.92,  1.95]
+     28.00     1.35     1.34     1.23     1.33    [  1.30,  1.36]
+     29.00     0.88     0.89     0.78     0.90    [  0.87,  0.93]
+     30.00     0.54     0.56     0.46     0.57    [  0.55,  0.58]
+  market = bid/ask mid; BS(IV) differs from market away from the money because of the volatility smile
+
+Backtest: 21-trading-day forecasts from trailing 1y vol, 198 dates (~47 independent)
+   50% interval contained the outcome  54.5%   (calibrated range 36%-64%)  ok
+   80% interval contained the outcome  82.3%   (calibrated range 69%-91%)  ok
+   90% interval contained the outcome  90.9%   (calibrated range 81%-99%)  ok
+   95% interval contained the outcome  96.0%   (calibrated range 89%-100%)  ok
+  moves beyond 3 sigma: 0.51% (normal model: 0.27%)
